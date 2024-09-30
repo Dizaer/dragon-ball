@@ -1,15 +1,16 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
     width: 280px;
   }
   
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
   .container {
-    padding: 2px 16px;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    background-color: rgb(60, 62, 68);
+    padding: 0.75rem;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
   }
 
 .fondo-personaje {
@@ -24,6 +25,17 @@
     border-top-right-radius: 0.5rem;
 }
 
+.fondo-personaje img {
+  -webkit-transition:all;
+  transition: .6s;
+  width: 100%;
+}
+
+.fondo-personaje:hover img{
+  -webkit-transform:scale();
+  transform: scale(1.2);
+}
+
 .personaje {
     position: absolute;
     top: -20px;
@@ -35,9 +47,55 @@
     object-position: center center;
     object-fit: contain;
     z-index: 0;
-    transition: transform 0.6s;
 }
 
-.personaje:hover {
-    size: 110%;
+.nombre {
+  margin: 0px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.2;
+    letter-spacing: -0.00833em;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.raza-genero {
+  margin: 0px 0px 16px;
+  font-size: 18px;
+  line-height: 1.8;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.00938em;
+  color: rgb(251, 192, 45);
+  text-transform: capitalize;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 700;
+}
+
+.datos-extra {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.datos-extra-p {
+  padding-bottom: 0.75rem;
+  margin: 0px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.00938em;
+  line-height: 0.5;
+  font-weight: 600;
+  color: rgb(245, 245, 245);
+  font-size: 1rem;
+}
+
+.datos-extra-s{
+  margin: 0px;
+  font-size: 18px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.00938em;
+  line-height: 0.5;
+  color: rgb(251, 192, 45);
+  font-weight: 700;
 }
