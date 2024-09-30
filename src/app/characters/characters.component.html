@@ -1,0 +1,35 @@
+<form [formGroup]= "filter" >
+  <input type="text" formControlName="affiliation" placeholder="afiliacion">
+  <br> <br>
+  <input type="number" formControlName="limit" placeholder="limite">
+  <button (click)="filtrar()">Hola *lo filtra*</button>
+</form>
+<br><br><br><br><br><br><br><br>
+<div class="card" *ngFor="let characterData of charactersData">
+    <div class="fondo-personaje" (click)="showCharacter(characterData.id)">
+        <img class="personaje" [src]="characterData.image" alt="Avatar">
+    </div>
+
+    <div class="container">
+      <div style="z-index: 1;">
+        <h2 class="nombre">{{characterData.name}}</h2>
+        <p class="raza-genero">{{characterData.race}}-{{characterData.gender}}</p>
+      </div>
+
+      <div class="datos-extra">
+        <div>
+          <p class="datos-extra-p">Base KI</p>
+          <span class="datos-extra-s">{{characterData.ki}}</span>
+        </div>
+        <div>
+          <p class="datos-extra-p">Total KI</p>
+          <span class="datos-extra-s">{{characterData.maxKi}}</span>
+        </div>
+        <div>
+          <p class="datos-extra-p">Afilliation</p>
+          <span class="datos-extra-s">{{characterData.affiliation}}</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
