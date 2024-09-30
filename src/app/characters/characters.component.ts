@@ -23,8 +23,8 @@ export class CharactersComponent implements OnInit{
     private fb: FormBuilder
   ){
     this.filter = this.fb.group({
-      limit:['10', [Validators.max(100)]],
-      affiliation:['Z fighter'],
+      limit:['58', [Validators.max(100)]],
+      affiliation:[''],
     })
   }
 
@@ -33,28 +33,21 @@ export class CharactersComponent implements OnInit{
   }
     
    cargarData(){
-    this.charactersAPI.obtener(this.filter.value).subscribe((res:any)=>{
-      this.charactersData = res;      
+    const filtro = this.filter.value;
+    this.charactersAPI.obtener(filtro).subscribe((res:any)=>{
+
+      this.charactersData = filtro.affiliation ? res : res.items;
+            
     });
    }
 
   filtrar(){
     console.log(this.filter.value);
     this.cargarData();
-    this.enviarData();
-  }
-
-  enviarData(){
-    this.charactersAPI.sendData(this.filter.value).subscribe((res:any)=>{
-      console.log(this.enviarData);
-    });
   }
 
   showCharacter(id: number){
     this.charactersAPI.obtenerPersonaje(id).subscribe((res:any)=>{
-      console.log(res);
-    });
-    this.charactersAPI.actualizarPersonaje(id, this.filter.value).subscribe((res:any)=>{
       console.log(res);
     });
   }

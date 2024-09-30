@@ -1,11 +1,24 @@
 <form [formGroup]= "filter" >
-  <input type="text" formControlName="affiliation" placeholder="afiliacion">
+  <select type="text" formControlName="affiliation">
+    <option value="">Todos</option>
+    <option value="Z Fighter">Z Fighter</option>
+    <option value="Red Ribbon Army">Red Ribbon Army</option>
+    <option value="Villain">Villaino</option>
+    <option value="Army of Frieza">Armada de freezer</option>
+    <option value="Namekian Warrior">Guerrero Namekiano</option>
+    <option value="Freelancer">Autonomo</option>
+    <option value="Pride Troopers">Orgullosos patrulleros</option>
+    <option value="Assistant of Vermoud">Asistente de peniwais</option>
+    <option value="Assistant of Beerus">Asistente del gato pelao</option>
+    <option value="Other">ni pao</option>
+  </select>
   <br> <br>
   <input type="number" formControlName="limit" placeholder="limite">
   <button (click)="filtrar()">Hola *lo filtra*</button>
 </form>
-<br><br><br><br><br><br><br><br>
-<div class="card" *ngFor="let characterData of charactersData">
+<br><br><br>
+<div class="afiliacion-separador">
+  <div class="card" *ngFor="let characterData of charactersData">
     <div class="fondo-personaje" (click)="showCharacter(characterData.id)">
         <img class="personaje" [src]="characterData.image" alt="Avatar">
     </div>
@@ -33,3 +46,4 @@
 
     </div>
   </div>
+</div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./header/header.component";
 import { CharactersComponent } from './characters/characters.component';
+import { LogoComponent } from './logo/logo.component';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ import { CharactersComponent } from './characters/characters.component';
   imports: [
     RouterOutlet, 
     HeaderComponent,
-    CharactersComponent
+    CharactersComponent,
+    LogoComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
