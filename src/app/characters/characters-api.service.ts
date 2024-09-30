@@ -12,7 +12,7 @@ export class CharactersAPIService {
   ) { }
 
   obtener(filtros:any):Observable<any> {
-    return this.httpDb.get(`https://dragonball-api.com/api/characters`,{params:filtros})
+    return this.httpDb.get(`https://dragonball-api.com/api/characters`, {params:filtros})
   }
 
   obtenerPersonaje(id : any):Observable<any> {
