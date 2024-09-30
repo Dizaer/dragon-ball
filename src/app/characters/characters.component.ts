@@ -17,6 +17,7 @@ import { raceWith } from 'rxjs';
 export class CharactersComponent implements OnInit{
   charactersData:any[] = [];
   filter: any;
+  afiliaciones: any[] = ["Z Fighter" ,"Red Ribbon Army" ,"Namekian Warrior", "Freelancer" ,"Army of Frieza", "Pride Troopers" ,"Assistant of Vermoud","God", "Assistant of Beerus", "Villain","Other"]
 
   constructor(
     private charactersAPI: CharactersAPIService,
@@ -24,7 +25,7 @@ export class CharactersComponent implements OnInit{
   ){
     this.filter = this.fb.group({
       limit:['10', [Validators.max(100)]],
-      affiliation:['Z fighter'],
+      affiliation:[''],
     })
   }
 
@@ -41,20 +42,10 @@ export class CharactersComponent implements OnInit{
   filtrar(){
     console.log(this.filter.value);
     this.cargarData();
-    this.enviarData();
-  }
-
-  enviarData(){
-    this.charactersAPI.sendData(this.filter.value).subscribe((res:any)=>{
-      console.log(this.enviarData);
-    });
   }
 
   showCharacter(id: number){
     this.charactersAPI.obtenerPersonaje(id).subscribe((res:any)=>{
-      console.log(res);
-    });
-    this.charactersAPI.actualizarPersonaje(id, this.filter.value).subscribe((res:any)=>{
       console.log(res);
     });
   }

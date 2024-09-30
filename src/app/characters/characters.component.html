@@ -1,11 +1,6 @@
-<form [formGroup]= "filter" >
-  <input type="text" formControlName="affiliation" placeholder="afiliacion">
-  <br> <br>
-  <input type="number" formControlName="limit" placeholder="limite">
-  <button (click)="filtrar()">Hola *lo filtra*</button>
-</form>
-<br><br><br><br><br><br><br><br>
-<div class="card" *ngFor="let characterData of charactersData">
+<div class="afiliacion-separador" *ngFor="let afiliacion of afiliaciones">
+  {{afiliacion}}
+  <div class="card" *ngFor="let characterData of charactersData">
     <div class="fondo-personaje" (click)="showCharacter(characterData.id)">
         <img class="personaje" [src]="characterData.image" alt="Avatar">
     </div>
@@ -33,3 +28,5 @@
 
     </div>
   </div>
+
+</div>
