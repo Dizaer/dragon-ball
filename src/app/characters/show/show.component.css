@@ -82,3 +82,7 @@
     color: white;
     font-size:x-large;
 }
+
+.destruido {
+    filter: grayscale(100%);
+}
