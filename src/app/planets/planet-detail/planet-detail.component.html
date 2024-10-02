@@ -1,0 +1,19 @@
+<div class="contenedor-maximo">
+    <img class="personaje-principal" [src]="planetData?.image" alt="Avatar">
+    <div class="fila1">
+        <div class="datos">
+            <h2>{{planetData?.name}}</h2>
+        </div>
+        <div class="description">
+            <p>{{planetData?.description}}</p>
+        </div>
+    </div>
+    <div class="fila2">
+        <div class="transformations" *ngIf="planetData?.characters">
+            <div class="datos" *ngFor="let character of planetData?.characters">
+                <a [routerLink]="[ '/characters', character?.id ]"><img class="transformation-image" [src]="character?.image" alt=""></a>
+                <p>{{character.name}}</p> 
+            </div>
+        </div>
+    </div>
+</div>    

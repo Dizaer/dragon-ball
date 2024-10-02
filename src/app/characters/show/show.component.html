@@ -1,0 +1,36 @@
+<div class="contenedor-maximo">
+    <img class="personaje-principal" [src]="characterData.image" alt="Avatar">
+    <div class="fila1">
+        <div class="datos">
+            <h2>{{characterData.name}}</h2>
+            <p>BaseKI: <span>{{characterData.ki}}</span></p>
+            <p>TotalKI: <span>{{characterData.maxKi}}</span></p>
+            <p>Race: <span>{{characterData.race}}</span></p>
+            <p>Gender: <span>{{characterData.gender}}</span></p>
+            <p>Affiliation: <span>{{characterData.affiliation}}</span></p>
+        </div>
+        <div class="description">
+            <p>{{characterData.description}}</p>
+        </div>
+    </div>
+    <div class="fila2">
+        <div class="origin-planet">
+            <p>Origin Planet:</p> 
+            <p><span>{{characterData.originPlanet?.name}}</span></p>
+            <a [routerLink]="['/planets', characterData.originPlanet?.id]"><img class="origin-planet-image" [src]="characterData.originPlanet?.image" alt=""></a>
+        </div>
+        <div class="transformations" *ngIf="characterData.transformations; else notransfor">
+            <div class="datos" *ngFor="let transformation of characterData.transformations">
+                <img class="transformation-image" [src]="transformation.image" alt="">
+                <p>{{transformation.name}}</p> 
+                <p>KI: <span>{{transformation.ki}}</span></p>
+            </div>
+        </div>
+    </div>
+</div>    
+
+        <ng-template #notransfor>
+            <div>
+                <img class="else" src="https://pbs.twimg.com/media/GEgH93kXwAITdko.jpg" alt="imagen">
+            </div>
+        </ng-template>

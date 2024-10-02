@@ -1,0 +1,71 @@
+.contenedor-maximo {
+    margin-top: 5rem;
+    margin-left: 5rem;
+    width: 1643px;
+    height: 900px;
+    position: relative;
+}
+
+.personaje-principal{
+    width: 386.45px;
+    height: 810px;
+}
+
+.fila1 {
+    display: inline-block;
+    position: absolute;
+    margin-left: 20rem;
+}
+
+.datos {
+    color: white;
+    background-color: rgb(60, 62, 68);
+    display: inline-block;
+}
+
+.description {
+    color: white;
+    background-color: rgb(60, 62, 68);
+    display: inline-block;
+    margin-left: 6rem;
+    width: 600px;
+    vertical-align: top;
+}
+
+.fila2 {
+    display: inline-block;
+    margin-top: 25rem;
+    margin-left: 10rem;
+    position: absolute;
+}
+
+.origin-planet {
+    color: white;
+    background-color: rgb(60, 62, 68);
+    display: inline-block;
+    margin-left: 0%;
+    position: absolute;
+    margin-top: -5rem;
+}
+
+.origin-planet-image {
+    width: 300px;
+    height: 300px;
+}
+
+.transformation-image {
+    width: 200px;
+    height: 300px;
+}
+
+.transformations {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 25rem;
+    margin-top: -5rem;
+    gap: 2rem;
+}
+
+.else {
+    margin-left: 20rem;
+}
