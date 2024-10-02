@@ -1,30 +1,33 @@
-<form [formGroup]= "filter" >
-  <div class="select">
-    <select type="text" formControlName="affiliation">
-      <option value="">Todos</option>
-      <option value="Z Fighter">Z Fighter</option>
-      <option value="Red Ribbon Army">Red Ribbon Army</option>
-      <option value="Villain">Villaino</option>
-      <option value="Army of Frieza">Armada de freezer</option>
-      <option value="Namekian Warrior">Guerrero Namekiano</option>
-      <option value="Freelancer">Autonomo</option>
-      <option value="Pride Troopers">Orgullosos patrulleros</option>
-      <option value="Assistant of Vermoud">Asistente de peniwais</option>
-      <option value="Assistant of Beerus">Asistente del gato pelao</option>
-      <option value="Other">ni pao</option>
-    </select>
-  </div>
-  <br> <br>
-  <input type="number" formControlName="limit" placeholder="limite">
-  <button (click)="filtrar()">Hola *lo filtra*</button>
-</form>
+<div class="formulario">
+  <form [formGroup]= "filter" >
+    <div class="select">
+      <select type="text" formControlName="affiliation">
+        <option value="">Todos</option>
+        <option value="Z Fighter">Z Fighter</option>
+        <option value="Red Ribbon Army">Red Ribbon Army</option>
+        <option value="Villain">Villaino</option>
+        <option value="Army of Frieza">Armada de freezer</option>
+        <option value="Namekian Warrior">Guerrero Namekiano</option>
+        <option value="Freelancer">Autonomo</option>
+        <option value="Pride Troopers">Orgullosos patrulleros</option>
+        <option value="Assistant of Vermoud">Asistente de peniwais</option>
+        <option value="Assistant of Beerus">Asistente del gato pelao</option>
+        <option value="Other">ni pao</option>
+      </select>
+    </div>
+    <br> <br>
+    <input type="number" formControlName="limit" placeholder="limite">
+    <button (click)="filtrar()">Hola *lo filtra*</button>
+  </form>
+</div>
 <br><br><br>
 <div class="afiliacion-separador">
   <div class="card" *ngFor="let characterData of charactersData">
-    <div class="fondo-personaje" (click)="showCharacter(characterData.id)">
-        <img class="personaje" [src]="characterData.image" alt="Avatar">
-    </div>
-
+    <a [routerLink]="[ '/characters', characterData.id]">
+      <div class="fondo-personaje" (click)="showCharacter(characterData.id)">
+          <img class="personaje" [src]="characterData.image" alt="Avatar">
+      </div>
+    </a>
     <div class="container">
       <div style="z-index: 1;">
         <h2 class="nombre">{{characterData.name}}</h2>

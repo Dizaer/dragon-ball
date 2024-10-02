@@ -1,12 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { CharactersAPIService } from '../characters-api.service';
 
 @Component({
   selector: 'app-show',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterModule
+  ],
   templateUrl: './show.component.html',
   styleUrl: './show.component.css'
 })
-export class ShowComponent {
+export class ShowComponent implements OnInit{
+  characterData:any[] = [];
 
+  constructor(
+    private characterAPI: CharactersAPIService,
+    private activeRoute: ActivatedRoute
+  ){
+
+  }
+  ngOnInit(): void {
+    this.cargarData();
+  }
+
+  cargarData(){
+    this.characterAPI.obtenerPersonaje(this.activeRoute.snapshot.paramMap.get('id')).subscribe((res:any)=>{
+      console.log(res);
+      this.characterData = res;
+    });
+  }
 }
