@@ -19,7 +19,9 @@
             <p><span>{{characterData.originPlanet?.name}}</span></p>
             <a [routerLink]="['/planets', characterData.originPlanet?.id]"><img class="origin-planet-image" [src]="characterData.originPlanet?.image" alt=""></a>
         </div>
-        <div class="transformations" *ngIf="characterData.transformations">
+
+        <div class="transformations" *ngIf="characterData.transformations.name">
+            <div class="texto-transformaciones">Transformaciones de {{characterData.name}}</div>
             <div class="datos" *ngFor="let transformation of characterData.transformations">
                 <img class="transformation-image" [src]="transformation.image" alt="">
                 <p>{{transformation.name}}</p> 

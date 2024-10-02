@@ -75,3 +75,10 @@
     color: purple;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
+
+.texto-transformaciones{
+    margin-top: -2rem;
+    position:absolute;
+    color: white;
+    font-size:x-large;
+}

@@ -9,7 +9,8 @@
         </div>
     </div>
     <div class="fila2">
-        <div class="transformations" *ngIf="planetData?.characters">
+        <div class="transformations" *ngIf="planetData?.characters[0]">
+            <div class="texto-originarios">Personas originarias del planeta {{planetData.name}}</div>
             <div class="datos" *ngFor="let character of planetData?.characters">
                 <a [routerLink]="[ '/characters', character?.id ]"><img class="transformation-image" [src]="character?.image" alt=""></a>
                 <p>{{character.name}}</p> 
