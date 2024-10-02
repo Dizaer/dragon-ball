@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CharactersAPIService } from '../characters-api.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-show',
   standalone: true,
   imports: [
+    CommonModule,
     RouterModule
   ],
   templateUrl: './show.component.html',
   styleUrl: './show.component.css'
 })
 export class ShowComponent implements OnInit{
-  characterData:any[] = [];
+  characterData:any = {};
 
   constructor(
     private characterAPI: CharactersAPIService,

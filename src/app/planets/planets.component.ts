@@ -2,13 +2,15 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { PlanetsApiService } from './planets-api.service';
+import { LogoComponent } from '../logo/logo.component';
 
 @Component({
   selector: 'app-planets',
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    LogoComponent
   ],
   templateUrl: './planets.component.html',
   styleUrl: './planets.component.css'

@@ -8,5 +8,6 @@ export const routes: Routes = [
     {path: 'planets', component: PlanetsComponent},
     {path: 'planets/:id', component: PlanetDetailComponent},
     {path: 'characters', component: CharactersComponent},
-    {path: 'characters/:id', component: ShowComponent}
+    {path: 'characters/:id', component: ShowComponent},
+    {path: '', redirectTo: '/characters', pathMatch: 'full'}
 ];

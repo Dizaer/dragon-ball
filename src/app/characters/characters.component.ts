@@ -3,6 +3,8 @@ import { CharactersAPIService } from './characters-api.service';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
+import { LogoComponent } from '../logo/logo.component';
 
 @Component({
   selector: 'app-characters',
@@ -10,7 +12,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    LogoComponent
   ],
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.css'

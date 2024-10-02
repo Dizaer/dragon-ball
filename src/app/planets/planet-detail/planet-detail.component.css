@@ -1,0 +1,51 @@
+.contenedor-maximo {
+    margin-top: 5rem;
+    margin-left: 5rem;
+    width: 1643px;
+    height: 900px;
+    position: relative;
+}
+
+.personaje-principal{
+    width: 600px;
+    height: 600px;
+}
+
+.fila1 {
+    display: inline-block;
+    position: absolute;
+    margin-left: 10rem;
+}
+
+.datos {
+    color: white;
+    background-color: rgb(60, 62, 68);
+    display: inline-block;
+}
+
+.description {
+    color: white;
+    background-color: rgb(60, 62, 68);
+    display: inline-block;
+    margin-left: 6rem;
+    width: 600px;
+    vertical-align: top;
+}
+
+.fila2 {
+    display: inline-block;
+    margin-top: 10rem;
+    margin-left: 10rem;
+    position: absolute;
+}
+
+.transformation-image {
+    width: 190px;
+    height: 285px;
+}
+
+.transformations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
