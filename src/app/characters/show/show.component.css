@@ -69,3 +69,9 @@
 .else {
     margin-left: 20rem;
 }
+
+.error-page {
+    background-color: greenyellow;
+    color: purple;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
