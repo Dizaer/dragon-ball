@@ -2,15 +2,17 @@
     <img class="personaje-principal" [src]="characterData.image" alt="Avatar">
     <div class="fila1">
         <div class="datos">
-            <h2>{{characterData.name}}</h2>
-            <p>BaseKI: <span>{{characterData.ki}}</span></p>
-            <p>TotalKI: <span>{{characterData.maxKi}}</span></p>
-            <p>Race: <span>{{characterData.race}}</span></p>
-            <p>Gender: <span>{{characterData.gender}}</span></p>
-            <p>Affiliation: <span>{{characterData.affiliation}}</span></p>
+            <div class="datos-extra">
+                <h2 class="nombre">{{characterData.name}}</h2>
+                <p class="datos-extra-p">BaseKI: <span class="datos-extra-r">{{characterData.ki}}</span></p>
+                <p class="datos-extra-p">TotalKI: <span class="datos-extra-r">{{characterData.maxKi}}</span></p>
+                <p class="datos-extra-p">Race: <span class="datos-extra-r">{{characterData.race}}</span></p>
+                <p class="datos-extra-p">Gender: <span class="datos-extra-r">{{characterData.gender}}</span></p>
+                <p class="datos-extra-p">Affiliation: <span class="datos-extra-r">{{characterData.affiliation}}</span></p>
+            </div>
         </div>
         <div class="description">
-            <p>{{characterData.description}}</p>
+            <p class="descri-text">{{characterData.description}}</p>
         </div>
     </div>
     <div class="fila2">
@@ -21,12 +23,14 @@
             <a [routerLink]="['/planets', characterData.originPlanet?.id]"><img [ngClass]="{'origin-planet-image':true,'destruido':characterData.originPlanet?.isDestroyed}" [src]="characterData.originPlanet?.image" alt=""></a>
         </div>
 
-        <div class="transformations" *ngIf="characterData.transformations.name">
+        <div class="transformations" *ngIf="characterData.transformations[0]">
             <div class="texto-transformaciones">Transformaciones de {{characterData.name}}</div>
-            <div class="datos" *ngFor="let transformation of characterData.transformations">
-                <img class="transformation-image" [src]="transformation.image" alt="">
-                <p>{{transformation.name}}</p> 
-                <p>KI: <span>{{transformation.ki}}</span></p>
+            <div class="datos-trans" *ngFor="let transformation of characterData.transformations">
+                <div class="fondo-imagen">
+                    <img class="transformation-image" [src]="transformation.image" alt="">
+                </div>
+                <p class="trans-name">{{transformation.name}}</p> 
+                <p class="trans-name">KI: <span class="trans-ki">{{transformation.ki}}</span></p>
             </div>
         </div>
     </div>

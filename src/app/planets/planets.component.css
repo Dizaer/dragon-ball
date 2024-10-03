@@ -19,7 +19,7 @@
     position: relative;
     background-position: center center;
     background-size: cover;
-    background-color: white;
+    background-image: url(	https://web.dragonball-api.com/images-compress/89980.webp);
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
 }
@@ -37,15 +37,13 @@
 
 .planeta {
       position: absolute;
-      top: -20px;
-      width: 280px;
-      height: 280px;
+      width: 260px;
+      height: 260px;
       /* min-height: 400px;
       max-height: 400px; */
-      margin: 0px;
-      object-position: center center;
       /* object-fit: contain; */
       z-index: 0;
+      border-radius: 11rem;
 }
 
 .name {
