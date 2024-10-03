@@ -69,3 +69,20 @@
 .else {
     margin-left: 20rem;
 }
+
+.error-page {
+    background-color: greenyellow;
+    color: purple;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.texto-transformaciones{
+    margin-top: -2rem;
+    position:absolute;
+    color: white;
+    font-size:x-large;
+}
+
+.destruido {
+    filter: grayscale(100%);
+}

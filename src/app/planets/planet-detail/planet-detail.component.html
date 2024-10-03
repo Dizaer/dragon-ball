@@ -1,15 +1,17 @@
-<div class="contenedor-maximo">
-    <img class="personaje-principal" [src]="planetData?.image" alt="Avatar">
+<div class="contenedor-maximo" *ngIf="planetData.name; else error">
+    <img [ngClass]="{'personaje-principal':true,'destruido':planetData.isDestroyed}" [src]="planetData?.image" alt="Avatar">
     <div class="fila1">
         <div class="datos">
             <h2>{{planetData?.name}}</h2>
         </div>
         <div class="description">
             <p>{{planetData?.description}}</p>
+            <p *ngIf="planetData.isDestroyed;else destruyido">El planeta esta destruido</p>
         </div>
     </div>
     <div class="fila2">
-        <div class="transformations" *ngIf="planetData?.characters">
+        <div class="transformations" *ngIf="planetData?.characters[0]">
+            <div class="texto-originarios">Personas originarias del planeta {{planetData.name}}</div>
             <div class="datos" *ngFor="let character of planetData?.characters">
                 <a [routerLink]="[ '/characters', character?.id ]"><img class="transformation-image" [src]="character?.image" alt=""></a>
                 <p>{{character.name}}</p> 
@@ -17,3 +19,18 @@
         </div>
     </div>
 </div>    
+
+<ng-template #error>
+    <div class="error-page">
+        <br><br><br>
+        <h2>Page Not Found</h2>
+        <p>Parece que no pudimos encontrar esa ID dentro de la API papu, ahora por tu culpa vegueta es un emo darks </p>
+        <a [routerLink]="[ '/characters']"><button>Regresar al inicio</button></a>
+        <br>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUSeZXdZVjLqbPEkc6NYkjYlonSN7nolPcPyYw6pJEA0I1vIWJgl0Ck84rwNSruhZi1Bw&usqp=CAU" alt="vegetitallorandopapu">
+    </div>
+</ng-template>
+
+<ng-template #destruyido>
+    <p>El planeta no esta destruido :D</p>
+</ng-template>

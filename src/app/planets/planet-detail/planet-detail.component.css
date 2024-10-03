@@ -34,7 +34,7 @@
 
 .fila2 {
     display: inline-block;
-    margin-top: 10rem;
+    margin-top: 12rem;
     margin-left: 10rem;
     position: absolute;
 }
@@ -48,4 +48,23 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+    min-width: 40rem;
+}
+
+.error-page {
+    background-color: rgb(255, 136, 0);
+    color: rgb(0, 217, 255);
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: larger;
+}
+
+.texto-originarios{
+    margin-top: -2rem;
+    position:absolute;
+    color: white;
+    font-size:x-large;
+}
+
+.destruido {
+    filter: grayscale(100%);
 }

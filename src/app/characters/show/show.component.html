@@ -1,4 +1,4 @@
-<div class="contenedor-maximo">
+<div class="contenedor-maximo" *ngIf="characterData.name; else error">
     <img class="personaje-principal" [src]="characterData.image" alt="Avatar">
     <div class="fila1">
         <div class="datos">
@@ -17,9 +17,12 @@
         <div class="origin-planet">
             <p>Origin Planet:</p> 
             <p><span>{{characterData.originPlanet?.name}}</span></p>
-            <a [routerLink]="['/planets', characterData.originPlanet?.id]"><img class="origin-planet-image" [src]="characterData.originPlanet?.image" alt=""></a>
+            <p *ngIf="characterData.originPlanet?.isDestroyed; else notdestroyed">El planeta esta destruido</p>
+            <a [routerLink]="['/planets', characterData.originPlanet?.id]"><img [ngClass]="{'origin-planet-image':true,'destruido':characterData.originPlanet?.isDestroyed}" [src]="characterData.originPlanet?.image" alt=""></a>
         </div>
-        <div class="transformations" *ngIf="characterData.transformations; else notransfor">
+
+        <div class="transformations" *ngIf="characterData.transformations.name">
+            <div class="texto-transformaciones">Transformaciones de {{characterData.name}}</div>
             <div class="datos" *ngFor="let transformation of characterData.transformations">
                 <img class="transformation-image" [src]="transformation.image" alt="">
                 <p>{{transformation.name}}</p> 
@@ -29,8 +32,19 @@
     </div>
 </div>    
 
-        <ng-template #notransfor>
-            <div>
-                <img class="else" src="https://pbs.twimg.com/media/GEgH93kXwAITdko.jpg" alt="imagen">
-            </div>
-        </ng-template>
+<ng-template #error>
+    <div class="error-page">
+        <br><br><br>
+        <h2>Page Not Found</h2>
+        <p>Parece que no pudimos encontrar esa ID dentro de la API papu, ahora por tu culpa vegueta esta llorando</p>
+        <a [routerLink]="[ '/characters']"><button>Regresar al inicio</button></a>
+        <br>
+        <img src="https://i0.wp.com/senpai.com.mx/wp-content/uploads/2020/07/Dragon-Ball_-Todas-las-veces-que-Vegeta-ha-llorado.jpg?fit=1280%2C720&ssl=1" alt="vegetitallorandopapu">
+    </div>
+</ng-template>
+
+<ng-template #notdestroyed>
+    <p>El planeta no esta destruido</p>
+</ng-template>
+
+
