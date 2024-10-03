@@ -13,7 +13,7 @@ export class PlanetsApiService {
   ) { }
 
   obtenerPlanetas():Observable<any> {
-    return this.httpDb.get('https://dragonball-api.com/api/planets')
+    return this.httpDb.get('https://dragonball-api.com/api/planets?limit=30')
   }
 
   obtenerPlaneta(id:any):Observable<any> {

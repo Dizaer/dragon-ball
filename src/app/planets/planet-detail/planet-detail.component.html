@@ -2,19 +2,21 @@
     <img [ngClass]="{'personaje-principal':true,'destruido':planetData.isDestroyed}" [src]="planetData?.image" alt="Avatar">
     <div class="fila1">
         <div class="datos">
-            <h2>{{planetData?.name}}</h2>
+            <h2 class="nombre">Planeta {{planetData?.name}}</h2>
         </div>
         <div class="description">
-            <p>{{planetData?.description}}</p>
-            <p *ngIf="planetData.isDestroyed;else destruyido">El planeta esta destruido</p>
+            <p class="descri-text">{{planetData?.description}}</p>
+            <p class="descri-text" *ngIf="planetData.isDestroyed;else destruyido">El planeta esta destruido</p>
         </div>
     </div>
     <div class="fila2">
         <div class="transformations" *ngIf="planetData?.characters[0]">
             <div class="texto-originarios">Personas originarias del planeta {{planetData.name}}</div>
-            <div class="datos" *ngFor="let character of planetData?.characters">
-                <a [routerLink]="[ '/characters', character?.id ]"><img class="transformation-image" [src]="character?.image" alt=""></a>
-                <p>{{character.name}}</p> 
+            <div class="datos-hab" *ngFor="let character of planetData?.characters">
+                <div class="fondo-imagen">
+                    <a [routerLink]="[ '/characters', character?.id ]"><img class="transformation-image" [src]="character?.image" alt=""></a>
+                </div>
+                <p class="character-name">{{character.name}}</p> 
             </div>
         </div>
     </div>
@@ -32,5 +34,5 @@
 </ng-template>
 
 <ng-template #destruyido>
-    <p>El planeta no esta destruido :D</p>
+    <p class="descri-text">El planeta no esta destruido :D</p>
 </ng-template>

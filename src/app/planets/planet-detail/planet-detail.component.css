@@ -9,32 +9,44 @@
 .personaje-principal{
     width: 600px;
     height: 600px;
+    border-radius: 40rem;
 }
 
 .fila1 {
     display: inline-block;
     position: absolute;
     margin-left: 10rem;
+    width: 3000px;
 }
 
 .datos {
     color: white;
     background-color: rgb(60, 62, 68);
     display: inline-block;
+    border-radius: 0.5rem;
+}
+
+.datos-hab {
+    color: white;
+    background-color: rgb(60, 62, 68);
+    display: inline-block;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
 }
 
 .description {
     color: white;
     background-color: rgb(60, 62, 68);
     display: inline-block;
-    margin-left: 6rem;
-    width: 600px;
+    margin-left: 3rem;
+    width: 625px;
     vertical-align: top;
+    border-radius: 0.5rem;
 }
 
 .fila2 {
     display: inline-block;
-    margin-top: 12rem;
+    margin-top: 20rem;
     margin-left: 10rem;
     position: absolute;
 }
@@ -67,4 +79,58 @@
 
 .destruido {
     filter: grayscale(100%);
+}
+
+.fondo-imagen {
+    background-image:url(https://web.dragonball-api.com/images-compress/89980.webp);
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-color: white;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.fondo-imagen img {
+    -webkit-transition:all;
+    transition: .6s;
+  }
+  
+.fondo-imagen:hover img{
+    -webkit-transform:scale();
+    transform: scale(1.2);
+}
+
+.character-name {
+    margin: 1rem;
+    font-size: 18px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: 0.00938em;
+    line-height: 0.5;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+}
+
+.nombre {
+    margin: 0px;
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.2;
+      letter-spacing: -0.00833em;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      padding: 1rem;
+  }
+
+.descri-text {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 14px;
+    line-height: 1.8;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: 0.00938em;
+    color: rgb(251, 192, 45);
+    text-transform: capitalize;
+    overflow: hidden;
+    font-weight: 700;
 }
