@@ -20,8 +20,9 @@ import { LogoComponent } from '../logo/logo.component';
 })
 export class CharactersComponent implements OnInit{
   charactersData:any[] = [];
+  afiliacionez:any[] = [];
   filter: any;
-
+    
   constructor(
     private charactersAPI: CharactersAPIService,
     private fb: FormBuilder
@@ -36,10 +37,31 @@ export class CharactersComponent implements OnInit{
     this.cargarData();
   }
     
-   cargarData(){
+  cargarData(){
     const filtro = this.filter.value;
     this.charactersAPI.obtener(filtro).subscribe((res:any)=>{
       this.charactersData = filtro.affiliation ? res : res.items;
+
+      this.charactersData.forEach(item => {
+        const afiliacion = item.affiliation;
+        if (!this.afiliacionez[afiliacion]){
+          this.afiliacionez[afiliacion] = [];
+        }
+
+        this.afiliacionez[afiliacion].push(item);
+      });
+
+      console.log(this.afiliacionez)
+      console.log(this.charactersData
+        .map(item => item.affiliation)
+        .reduce((obj, affiliation) => {
+          if (obj[affiliation]) {
+            obj[affiliation] = obj[affiliation] + 1;
+          } else {
+            obj[affiliation] = 1;
+          }
+          return obj;
+        }, {}));
     });
    }
 

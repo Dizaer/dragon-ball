@@ -31,11 +31,11 @@
 
 .boton {
     display: inline-flex;
+    position: static;
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-pack: center;
     justify-content: center;
-    position: relative;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;

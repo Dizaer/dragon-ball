@@ -1,5 +1,5 @@
 <app-logo></app-logo>
-<div class="formulario">
+<!-- <div class="formulario">
   <form [formGroup]= "filter" >
     <div class="select">
       <select type="text" formControlName="affiliation">
@@ -20,36 +20,39 @@
     <input type="number" formControlName="limit" placeholder="limite">
     <button (click)="filtrar()">Hola *lo filtra*</button>
   </form>
-</div>
-<br><br><br>
-<div class="afiliacion-separador">
-  <div class="card" *ngFor="let characterData of charactersData">
-    <a [routerLink]="[ '/characters', characterData.id]">
-      <div class="fondo-personaje" (click)="showCharacter(characterData.id)">
-          <img class="personaje" [src]="characterData.image" alt="Avatar">
-      </div>
-    </a>
-    <div class="container">
-      <div style="z-index: 1;">
-        <h2 class="nombre">{{characterData.name}}</h2>
-        <p class="raza-genero">{{characterData.race}}-{{characterData.gender}}</p>
-      </div>
-
-      <div class="datos-extra">
-        <div>
-          <p class="datos-extra-p">Base KI</p>
-          <span class="datos-extra-s">{{characterData.ki}}</span>
+</div> -->
+<!-- <br><br><br> -->
+<div class="afiliacion-separador" *ngFor="let afiliacionGroup of afiliacionez | keyvalue">
+  <h2 class="CSS-APESTA">プレイスホルダー {{afiliacionGroup.key}}</h2>
+  <div class="card-container">
+    <div class="card" *ngFor="let characterData of afiliacionGroup.value">
+      <a [routerLink]="[ '/characters', characterData.id]">
+        <div class="fondo-personaje" (click)="showCharacter(characterData.id)">
+            <img class="personaje" [src]="characterData.image" alt="Avatar">
         </div>
-        <div>
-          <p class="datos-extra-p">Total KI</p>
-          <span class="datos-extra-s">{{characterData.maxKi}}</span>
+      </a>
+      <div class="container">
+        <div style="z-index: 1;">
+          <h2 class="nombre">{{characterData.name}}</h2>
+          <p class="raza-genero">{{characterData.race}}-{{characterData.gender}}</p>
         </div>
-        <div>
-          <p class="datos-extra-p">Afilliation</p>
-          <span class="datos-extra-s">{{characterData.affiliation}}</span>
+  
+        <div class="datos-extra">
+          <div>
+            <p class="datos-extra-p">Base KI</p>
+            <span class="datos-extra-s">{{characterData.ki}}</span>
+          </div>
+          <div>
+            <p class="datos-extra-p">Total KI</p>
+            <span class="datos-extra-s">{{characterData.maxKi}}</span>
+          </div>
+          <div>
+            <p class="datos-extra-p">Afilliation</p>
+            <span class="datos-extra-s">{{characterData.affiliation}}</span>
+          </div>
         </div>
+  
       </div>
-
     </div>
   </div>
 </div>
