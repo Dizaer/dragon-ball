@@ -72,7 +72,7 @@
     display: flex;
     flex-wrap: wrap;
     padding-left: 25rem;
-    margin-top: -5rem;
+    width: 50rem;
     gap: 2rem;
 }
 
