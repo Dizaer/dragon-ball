@@ -31,5 +31,5 @@ export class PlanetsComponent implements OnInit{
     this.planetsAPI.obtenerPlanetas().subscribe((res:any)=>{
       this.planetsData = res.items;
     })
-  }
+  } 
 }

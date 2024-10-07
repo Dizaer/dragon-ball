@@ -23,7 +23,7 @@
 </div> -->
 <!-- <br><br><br> -->
 <div class="afiliacion-separador" *ngFor="let afiliacionGroup of afiliacionez | keyvalue">
-  <h2 class="CSS-APESTA">プレイスホルダー {{afiliacionGroup.key}}</h2>
+  <h2 class="CSS-APESTA"> 所属 {{afiliacionGroup.key}}</h2>
   <div class="card-container">
     <div class="card" *ngFor="let characterData of afiliacionGroup.value">
       <a [routerLink]="[ '/characters', characterData.id]">
