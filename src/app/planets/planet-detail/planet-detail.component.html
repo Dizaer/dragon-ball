@@ -2,7 +2,7 @@
     <img [ngClass]="{'personaje-principal':true,'destruido':planetData.isDestroyed}" [src]="planetData?.image" alt="Avatar">
     <div class="fila1">
         <div class="datos">
-            <h2 class="nombre">Planeta {{planetData?.name}}</h2>
+            <h2 class="nombre">{{planetData?.name}}</h2>
         </div>
         <div class="description">
             <p class="descri-text">{{planetData?.description}}</p>
