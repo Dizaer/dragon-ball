@@ -1,0 +1,136 @@
+.contenedor-maximo {
+    margin-top: 5rem;
+    margin-left: 5rem;
+    width: 1643px;
+    height: 900px;
+    position: relative;
+}
+
+.personaje-principal{
+    width: 600px;
+    height: 600px;
+    border-radius: 40rem;
+}
+
+.fila1 {
+    display: inline-block;
+    position: absolute;
+    margin-left: 10rem;
+    width: 3000px;
+}
+
+.datos {
+    color: white;
+    background-color: rgb(60, 62, 68);
+    display: inline-block;
+    border-radius: 0.5rem;
+}
+
+.datos-hab {
+    color: white;
+    background-color: rgb(60, 62, 68);
+    display: inline-block;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.description {
+    color: white;
+    background-color: rgb(60, 62, 68);
+    display: inline-block;
+    margin-left: 3rem;
+    width: 625px;
+    vertical-align: top;
+    border-radius: 0.5rem;
+}
+
+.fila2 {
+    display: inline-block;
+    margin-top: 20rem;
+    margin-left: 10rem;
+    position: absolute;
+}
+
+.transformation-image {
+    width: 190px;
+    height: 285px;
+}
+
+.transformations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    min-width: 40rem;
+}
+
+.error-page {
+    background-color: rgb(255, 136, 0);
+    color: rgb(0, 217, 255);
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: larger;
+}
+
+.texto-originarios{
+    margin-top: -2rem;
+    position:absolute;
+    color: white;
+    font-size:x-large;
+}
+
+.destruido {
+    filter: grayscale(100%);
+}
+
+.fondo-imagen {
+    background-image:url(https://web.dragonball-api.com/images-compress/89980.webp);
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-color: white;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.fondo-imagen img {
+    -webkit-transition:all;
+    transition: .6s;
+  }
+  
+.fondo-imagen:hover img{
+    -webkit-transform:scale();
+    transform: scale(1.2);
+}
+
+.character-name {
+    margin: 1rem;
+    font-size: 18px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: 0.00938em;
+    line-height: 0.5;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+}
+
+.nombre {
+    margin: 0px;
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.2;
+      letter-spacing: -0.00833em;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      padding: 1rem;
+  }
+
+.descri-text {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 14px;
+    line-height: 1.8;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: 0.00938em;
+    color: rgb(251, 192, 45);
+    text-transform: capitalize;
+    overflow: hidden;
+    font-weight: 700;
+}

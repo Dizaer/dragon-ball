@@ -1,0 +1,54 @@
+<div class="contenedor-maximo" *ngIf="characterData.name; else error">
+    <img class="personaje-principal" [src]="characterData.image" alt="Avatar">
+    <div class="fila1">
+        <div class="datos">
+            <div class="datos-extra">
+                <h2 class="nombre">{{characterData.name}}</h2>
+                <p class="datos-extra-p">BaseKI: <span class="datos-extra-r">{{characterData.ki}}</span></p>
+                <p class="datos-extra-p">TotalKI: <span class="datos-extra-r">{{characterData.maxKi}}</span></p>
+                <p class="datos-extra-p">Race: <span class="datos-extra-r">{{characterData.race}}</span></p>
+                <p class="datos-extra-p">Gender: <span class="datos-extra-r">{{characterData.gender}}</span></p>
+                <p class="datos-extra-p">Affiliation: <span class="datos-extra-r">{{characterData.affiliation}}</span></p>
+            </div>
+        </div>
+        <div class="description">
+            <p class="descri-text">{{characterData.description}}</p>
+        </div>
+    </div>
+    <div class="fila2">
+        <div class="origin-planet">
+            <p>Origin Planet:</p> 
+            <p><span>{{characterData.originPlanet?.name}}</span></p>
+            <p *ngIf="characterData.originPlanet?.isDestroyed; else notdestroyed">El planeta esta destruido</p>
+            <a [routerLink]="['/planets', characterData.originPlanet?.id]"><img [ngClass]="{'origin-planet-image':true,'destruido':characterData.originPlanet?.isDestroyed}" [src]="characterData.originPlanet?.image" alt=""></a>
+        </div>
+
+        <div class="transformations" *ngIf="characterData.transformations[0]">
+            <div class="texto-transformaciones">Transformaciones de {{characterData.name}}</div>
+            <div class="datos-trans" *ngFor="let transformation of characterData.transformations">
+                <div class="fondo-imagen">
+                    <img class="transformation-image" [src]="transformation.image" alt="">
+                </div>
+                <p class="trans-name">{{transformation.name}}</p> 
+                <p class="trans-name">KI: <span class="trans-ki">{{transformation.ki}}</span></p>
+            </div>
+        </div>
+    </div>
+</div>    
+
+<ng-template #error>
+    <div class="error-page">
+        <br><br><br>
+        <h2>Page Not Found</h2>
+        <p>Parece que no pudimos encontrar esa ID dentro de la API papu, ahora por tu culpa vegueta esta llorando</p>
+        <a [routerLink]="[ '/characters']"><button>Regresar al inicio</button></a>
+        <br>
+        <img src="https://i0.wp.com/senpai.com.mx/wp-content/uploads/2020/07/Dragon-Ball_-Todas-las-veces-que-Vegeta-ha-llorado.jpg?fit=1280%2C720&ssl=1" alt="vegetitallorandopapu">
+    </div>
+</ng-template>
+
+<ng-template #notdestroyed>
+    <p>El planeta no esta destruido</p>
+</ng-template>
+
+

@@ -1,0 +1,168 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 280px;
+  }
+  
+  .container {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    background-color: rgb(60, 62, 68);
+    padding: 0.75rem;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+  }
+
+.fondo-personaje {
+    width: 280px;
+    height: 350px;
+    background-image:url(https://web.dragonball-api.com/images-compress/89980.webp);
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-color: white;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.fondo-personaje img {
+  -webkit-transition:all;
+  transition: .6s;
+  width: 100%;
+}
+
+.fondo-personaje:hover img{
+  -webkit-transform:scale();
+  transform: scale(1.2);
+}
+
+.personaje {
+    position: absolute;
+    top: -20px;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    max-height: 400px;
+    margin: 0px;
+    object-position: center center;
+    object-fit: contain;
+    z-index: 0;
+}
+
+.nombre {
+  margin: 0px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.2;
+    letter-spacing: -0.00833em;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.raza-genero {
+  margin: 0px 0px 16px;
+  font-size: 18px;
+  line-height: 1.8;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.00938em;
+  color: rgb(251, 192, 45);
+  text-transform: capitalize;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 700;
+}
+
+.datos-extra {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.datos-extra-p {
+  padding-bottom: 0.75rem;
+  margin: 0px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.00938em;
+  line-height: 0.5;
+  font-weight: 600;
+  color: rgb(245, 245, 245);
+  font-size: 1rem;
+}
+
+.datos-extra-s{
+  margin: 0px;
+  font-size: 18px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.00938em;
+  line-height: 0.5;
+  color: rgb(251, 192, 45);
+  font-weight: 700;
+}
+
+.afiliacion-separador{
+  margin-left: 10rem;
+}
+
+.card-container {
+  display:flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.CSS-APESTA{
+  margin-bottom: 2rem;
+  font-size: 25px;
+  line-height: 1.167;
+  letter-spacing: -0.01562em;
+  color: rgb(251, 192, 45);
+  font-weight: 900;
+  font-family: tahoma;
+}
+
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 10px red;
+  border: 1px;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background-color: rgb(52, 50, 60);
+  background-image: none;
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  position: relative;
+  display: flex;
+  width: 15em;
+  height: 2em;
+  border-radius: .25em;
+  overflow: hidden;
+}
+
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5em;
+  background-color: #34495e;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+
+.select:hover::after {
+  color: #6f1313;
+}
+
+.formulario {
+  padding-left: 10rem;
+}

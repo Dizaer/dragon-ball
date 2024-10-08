@@ -1,0 +1,14 @@
+<app-logo></app-logo>
+<div class="planetas-separador">
+    <div class="card" *ngFor="let planetData of planetsData">
+        <a [routerLink]="['/planets', planetData.id]">
+            <div class="fondo-planeta">
+                <img class="planeta" [src]="planetData.image" alt="Avatar">
+            </div>
+        </a>
+        <div class="container">
+            <h2 class="name">{{planetData.name}}</h2>
+            <p class="description">{{planetData.description}}</p>
+        </div>
+    </div>
+</div>
