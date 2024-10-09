@@ -1,5 +1,7 @@
 <div class="contenedor-maximo" *ngIf="characterData.name; else error">
-    <img class="personaje-principal" [src]="characterData.image" alt="Avatar">
+    <div class="fondo-personaje-principal">
+        <img class="personaje-principal" [src]="characterData.image" alt="Avatar">
+    </div>
     <div class="fila1">
         <div class="datos">
             <div class="datos-extra">
@@ -17,10 +19,12 @@
     </div>
     <div class="fila2">
         <div class="origin-planet">
-            <p>Origin Planet:</p> 
-            <p><span>{{characterData.originPlanet?.name}}</span></p>
-            <p *ngIf="characterData.originPlanet?.isDestroyed; else notdestroyed">El planeta esta destruido</p>
-            <a [routerLink]="['/planets', characterData.originPlanet?.id]"><img [ngClass]="{'origin-planet-image':true,'destruido':characterData.originPlanet?.isDestroyed}" [src]="characterData.originPlanet?.image" alt=""></a>
+            <p class="datos-planeta-p">Origin Planet:</p> 
+            <p><span class="datos-planeta-r">{{characterData.originPlanet?.name}}</span></p>
+            <p class="datos-planeta-p" *ngIf="characterData.originPlanet?.isDestroyed; else notdestroyed">El planeta esta destruido</p>
+            <a [routerLink]="['/planets', characterData.originPlanet?.id]">
+                <img [ngClass]="{'origin-planet-image':true,'destruido':characterData.originPlanet?.isDestroyed}" [src]="characterData.originPlanet?.image" alt="">
+            </a>
         </div>
 
         <div class="transformations" *ngIf="characterData.transformations[0]">
@@ -48,7 +52,7 @@
 </ng-template>
 
 <ng-template #notdestroyed>
-    <p>El planeta no esta destruido</p>
+    <p class="datos-planeta-p">El planeta no esta destruido</p>
 </ng-template>
 
 
